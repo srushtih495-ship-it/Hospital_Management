@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+venv/
+.env
+
+# Node.js
+node_modules/
+.next/
+out/
+build/
+dist/
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+
+# IDE
+.vscode/
+.idea/
+
+# Test result files
+**/test_results.txt
+create_repo_result.txt
+create_repo.py
+test_github.py
+
+# Secrets / API keys
+Token
+db/test_neon.py
+backend/test_render.py
+frontend/test_vercel.py

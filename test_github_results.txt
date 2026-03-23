@@ -1,0 +1,22 @@
+GITHUB API CONNECTION TEST
+========================================
+
+[1] Verifying API Key...
+  STATUS: OK
+  Username: srushtih495-ship-it
+  Name: None
+  Email: None
+  ID: 268843084
+  Plan: N/A
+  Public Repos: 4
+  Private Repos: N/A
+
+[2] Listing Repos (top 5)...
+  Found: 4 repo(s) shown
+  - srushtih495-ship-it/project (public)
+  - srushtih495-ship-it/Antigravity (public)
+  - srushtih495-ship-it/test1 (public)
+  - srushtih495-ship-it/test (public)
+
+========================================
+DONE
