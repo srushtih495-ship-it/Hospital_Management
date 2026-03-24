@@ -14,7 +14,7 @@ payload = json.dumps({
     "envVars": [
         {
             "key": "DATABASE_URL",
-            "value": "postgresql://neondb_owner:npg_vGY2bagywA3c@ep-damp-paper-ajt8kth1.c-3.us-east-2.aws.neon.tech/neondb?sslmode=require",
+            "value": "postgresql://neondb_owner:npg_vGY2bagywA3c@ep-damp-paper-ajt8kth1-pooler.c-3.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require",
             "generateValue": False
         }
     ],
