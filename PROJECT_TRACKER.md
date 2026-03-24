@@ -25,21 +25,21 @@
 ## 📋 Upcoming Phases
 
 ### Phase 2: Database (Neon PostgreSQL)
-- [ ] Design database schema (tables, relationships)
-- [ ] Set up Neon project & connection string
-- [ ] Create SQL migration scripts
+- [x] Design database schema (tables, relationships)
+- [x] Set up Neon project & connection string (`Hospital_Managemant` found and connected)
+- [x] Create SQL migration scripts (created `db/schema/001_initial.sql` and `users` table)
 
 ### Phase 3: Backend (FastAPI on Render)
-- [ ] Initialize FastAPI project with dependencies
-- [ ] Create database models (SQLAlchemy)
-- [ ] Build API endpoints (CRUD)
-- [ ] Configure Render deployment (`render.yaml`)
+- [x] Initialize FastAPI project with dependencies (`backend/app`)
+- [x] Create database models (SQLAlchemy placeholder via asyncpg schema)
+- [x] Build API endpoints (CRUD) (created `/health` and `/api/v1/users`)
+- [x] Configure Render deployment (`render.yaml`) - *Note: Render deployment requires manual triggering on dashboard due to free-tier API restrictions.*
 
 ### Phase 4: Frontend (Next.js on Vercel)
-- [ ] Initialize Next.js project
-- [ ] Build pages with HTML/CSS focus
-- [ ] Connect to FastAPI backend
-- [ ] Configure Vercel deployment
+- [x] Initialize Next.js project
+- [x] Build pages with HTML/CSS focus (created Glassmorphism Sign In/Sign Up splash page)
+- [ ] Connect to FastAPI backend (pending backend live deployment)
+- [x] Configure Vercel deployment (Live at: https://frontend-dpi7k6tu1-srushtih495-7258s-projects.vercel.app)
 
 ---
 

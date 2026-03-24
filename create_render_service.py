@@ -11,17 +11,19 @@ payload = json.dumps({
     "ownerId": "tea-d6t43u24d50c73c2jos0",
     "repo": GITHUB_REPO,
     "branch": "main",
-    "rootDir": "backend",
     "envVars": [
         {
             "key": "DATABASE_URL",
-            "value": "postgresql://neondb_owner:npg_vGY2bagywA3c@ep-damp-paper-ajt8kth1.c-3.us-east-2.aws.neon.tech/neondb?sslmode=require"
+            "value": "postgresql://neondb_owner:npg_vGY2bagywA3c@ep-damp-paper-ajt8kth1.c-3.us-east-2.aws.neon.tech/neondb?sslmode=require",
+            "generateValue": False
         }
     ],
     "serviceDetails": {
         "env": "python",
-        "buildCommand": "pip install -r requirements.txt",
-        "startCommand": "uvicorn app.main:app --host 0.0.0.0 --port $PORT",
+        "envSpecificDetails": {
+            "buildCommand": "cd backend && pip install -r requirements.txt",
+            "startCommand": "cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+        }
     }
 }).encode("utf-8")
 
@@ -41,7 +43,7 @@ try:
         print(f"Service Name: {data.get('name')}")
         print(f"Service URL: {data.get('service', {}).get('url')}")
 except urllib.error.HTTPError as e:
-    body = e.read().decode()[:500]
+    body = e.read().decode()
     print(f"STATUS: FAIL")
     print(f"HTTP {e.code}: {body}")
 except Exception as e:
