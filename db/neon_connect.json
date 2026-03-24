@@ -1,0 +1,181 @@
+{
+  "project": {
+    "data_storage_bytes_hour": 0,
+    "data_transfer_bytes": 0,
+    "written_data_bytes": 0,
+    "compute_time_seconds": 0,
+    "active_time_seconds": 0,
+    "cpu_used_sec": 0,
+    "id": "quiet-cloud-76289055",
+    "platform_id": "aws",
+    "region_id": "aws-us-east-2",
+    "name": "Hospital_Managemant",
+    "slug": "quiet-cloud-76289055",
+    "provisioner": "k8s-neonvm",
+    "default_endpoint_settings": {
+      "autoscaling_limit_min_cu": 0.25,
+      "autoscaling_limit_max_cu": 0.25,
+      "suspend_timeout_seconds": 0
+    },
+    "settings": {
+      "allowed_ips": {
+        "ips": [],
+        "protected_branches_only": false
+      },
+      "enable_logical_replication": false,
+      "maintenance_window": {
+        "weekdays": [
+          6
+        ],
+        "start_time": "09:00",
+        "end_time": "10:00"
+      },
+      "block_public_connections": false,
+      "block_vpc_connections": false,
+      "hipaa": false
+    },
+    "pg_version": 17,
+    "proxy_host": "c-3.us-east-2.aws.neon.tech",
+    "branch_logical_size_limit": 512,
+    "branch_logical_size_limit_bytes": 536870912,
+    "store_passwords": true,
+    "creation_source": "console",
+    "history_retention_seconds": 21600,
+    "created_at": "2026-03-23T07:37:51Z",
+    "updated_at": "2026-03-23T07:37:51Z",
+    "consumption_period_start": "0001-01-01T00:00:00Z",
+    "consumption_period_end": "0001-01-01T00:00:00Z",
+    "owner_id": "org-aged-firefly-24219546",
+    "org_id": "org-aged-firefly-24219546"
+  },
+  "connection_uris": [
+    {
+      "connection_uri": "postgresql://neondb_owner:npg_vGY2bagywA3c@ep-damp-paper-ajt8kth1.c-3.us-east-2.aws.neon.tech/neondb?sslmode=require",
+      "connection_parameters": {
+        "database": "neondb",
+        "password": "npg_vGY2bagywA3c",
+        "role": "neondb_owner",
+        "host": "ep-damp-paper-ajt8kth1.c-3.us-east-2.aws.neon.tech",
+        "pooler_host": "ep-damp-paper-ajt8kth1-pooler.c-3.us-east-2.aws.neon.tech"
+      }
+    }
+  ],
+  "roles": [
+    {
+      "branch_id": "br-curly-feather-ajk0weu7",
+      "name": "neondb_owner",
+      "password": "npg_vGY2bagywA3c",
+      "protected": false,
+      "authentication_method": "password",
+      "created_at": "2026-03-23T07:37:51Z",
+      "updated_at": "2026-03-23T07:37:51Z"
+    }
+  ],
+  "databases": [
+    {
+      "id": 597953,
+      "branch_id": "br-curly-feather-ajk0weu7",
+      "name": "neondb",
+      "owner_name": "neondb_owner",
+      "created_at": "2026-03-23T07:37:51Z",
+      "updated_at": "2026-03-23T07:37:51Z"
+    }
+  ],
+  "operations": [
+    {
+      "id": "532ad685-41cc-4495-8411-4af094ef362f",
+      "project_id": "quiet-cloud-76289055",
+      "branch_id": "br-curly-feather-ajk0weu7",
+      "action": "create_timeline",
+      "status": "running",
+      "failures_count": 0,
+      "created_at": "2026-03-23T07:37:51Z",
+      "updated_at": "2026-03-23T07:37:51Z",
+      "total_duration_ms": 0
+    },
+    {
+      "id": "cedd7331-afa2-4a12-bd35-0dcf97c06d6f",
+      "project_id": "quiet-cloud-76289055",
+      "branch_id": "br-curly-feather-ajk0weu7",
+      "endpoint_id": "ep-damp-paper-ajt8kth1",
+      "action": "start_compute",
+      "status": "scheduling",
+      "failures_count": 0,
+      "created_at": "2026-03-23T07:37:51Z",
+      "updated_at": "2026-03-23T07:37:51Z",
+      "total_duration_ms": 0
+    }
+  ],
+  "branch": {
+    "id": "br-curly-feather-ajk0weu7",
+    "project_id": "quiet-cloud-76289055",
+    "name": "main",
+    "slug": "br-curly-feather-ajk0weu7",
+    "current_state": "init",
+    "pending_state": "ready",
+    "state_changed_at": "2026-03-23T07:37:51Z",
+    "creation_source": "console",
+    "primary": true,
+    "default": true,
+    "protected": false,
+    "cpu_used_sec": 0,
+    "compute_time_seconds": 0,
+    "active_time_seconds": 0,
+    "written_data_bytes": 0,
+    "data_transfer_bytes": 0,
+    "created_at": "2026-03-23T07:37:51Z",
+    "updated_at": "2026-03-23T07:37:51Z",
+    "init_source": "parent-data"
+  },
+  "endpoints": [
+    {
+      "host": "ep-damp-paper-ajt8kth1.c-3.us-east-2.aws.neon.tech",
+      "hosts": {
+        "read_write_host": "ep-damp-paper-ajt8kth1.c-3.us-east-2.aws.neon.tech",
+        "read_write_pooled_host": "ep-damp-paper-ajt8kth1-pooler.c-3.us-east-2.aws.neon.tech"
+      },
+      "id": "ep-damp-paper-ajt8kth1",
+      "slug": "ep-damp-paper-ajt8kth1",
+      "branch_slug": "br-curly-feather-ajk0weu7",
+      "project_slug": "quiet-cloud-76289055",
+      "project_id": "quiet-cloud-76289055",
+      "branch_id": "br-curly-feather-ajk0weu7",
+      "autoscaling_limit_min_cu": 0.25,
+      "autoscaling_limit_max_cu": 0.25,
+      "region_id": "aws-us-east-2",
+      "type": "read_write",
+      "current_state": "init",
+      "pending_state": "active",
+      "group": {
+        "size": {
+          "min": 1,
+          "max": 1
+        },
+        "allow_readable_secondaries": false,
+        "computes": [
+          {
+            "binding_id": "rrs",
+            "current_state": "init",
+            "pending_state": "active",
+            "role": "read_write",
+            "compute_host": "ep-damp-paper-ajt8kth1-rrs.c-3.us-east-2.aws.neon.tech",
+            "compute_pooled_host": "ep-damp-paper-ajt8kth1-rrs-pooler.c-3.us-east-2.aws.neon.tech",
+            "created_at": "2026-03-23T07:37:51Z",
+            "updated_at": "2026-03-23T07:37:51Z"
+          }
+        ]
+      },
+      "settings": {},
+      "pooler_enabled": false,
+      "pooler_mode": "transaction",
+      "disabled": false,
+      "passwordless_access": true,
+      "creation_source": "console",
+      "created_at": "2026-03-23T07:37:51Z",
+      "updated_at": "2026-03-23T07:37:51Z",
+      "proxy_host": "c-3.us-east-2.aws.neon.tech",
+      "suspend_timeout_seconds": 0,
+      "provisioner": "k8s-neonvm"
+    }
+  ]
+}

@@ -18,6 +18,7 @@
 | 6 | Tested Vercel API connection | 2026-03-23 | ✅ API key valid, user: `srushtih495-7258` (`srushtih495@gmail.com`), 0 projects — ready to deploy |
 | 7 | Tested GitHub API connection | 2026-03-23 | ✅ API key valid, user: `srushtih495-ship-it`, 4 public repos |
 | 8 | Created GitHub repo | 2026-03-23 | ✅ `srushtih495-ship-it/Hospital_Management` — public, branch: `main` |
+| 9 | Initialized git & pushed to GitHub | 2026-03-23 | ✅ All project files pushed (secrets excluded via `.gitignore`) |
 
 ---
 
