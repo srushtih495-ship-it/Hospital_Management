@@ -64,13 +64,13 @@ export default function Dashboard() {
         {/* Navigation Links */}
         <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', flex: 1 }}>
           {[
-            { name: 'Dashboard', icon: '📊' },
-            { name: 'Patients', icon: '👥' },
-            { name: 'Appointments', icon: '📅' },
-            { name: 'Doctors', icon: '🩺' },
-            { name: 'Billing', icon: '💳' }
+            { name: 'Dashboard', icon: '📊', route: '/dashboard' },
+            { name: 'Patients', icon: '👥', route: '/dashboard/patients' },
+            { name: 'Appointments', icon: '📅', route: '/dashboard/appointments' },
+            { name: 'Doctors', icon: '🩺', route: '/dashboard/doctors' },
+            { name: 'Billing', icon: '💳', route: '/dashboard/billing' }
           ].map((item) => (
-            <a key={item.name} href="#" style={{
+            <Link key={item.name} href={item.route} style={{
               display: 'flex',
               alignItems: 'center',
               padding: '1rem',
@@ -85,7 +85,7 @@ export default function Dashboard() {
             }}>
               <span style={{ fontSize: '1.3rem' }}>{item.icon}</span>
               {isSidebarOpen && item.name}
-            </a>
+            </Link>
           ))}
         </nav>
 
