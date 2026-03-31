@@ -23,11 +23,11 @@ export default function NewPatient() {
     await new Promise(resolve => setTimeout(resolve, 1500));
     
     // Update live dashboard stats
-    const savedStats = localStorage.getItem('hospitalStats');
+    const savedStats = localStorage.getItem('hospitalStatsV2');
     if (savedStats) {
       const statsObj = JSON.parse(savedStats);
       statsObj.patients += 1;
-      localStorage.setItem('hospitalStats', JSON.stringify(statsObj));
+      localStorage.setItem('hospitalStatsV2', JSON.stringify(statsObj));
     }
     
     setSuccess('Patient registered successfully!');

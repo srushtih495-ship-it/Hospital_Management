@@ -7,7 +7,7 @@ export default function Dashboard() {
   const [theme, setTheme] = useState('system');
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [userEmail, setUserEmail] = useState('admin@hospital.com');
-  const [stats, setStats] = useState({ patients: 1248, appointments: 42, doctors: 18 });
+  const [stats, setStats] = useState({ patients: 5, appointments: 6, doctors: 6 });
 
   useEffect(() => {
     // On load, check if there is a saved theme
@@ -24,11 +24,11 @@ export default function Dashboard() {
     }
 
     // Load dynamic persistent stats 
-    const savedStats = localStorage.getItem('hospitalStats');
+    const savedStats = localStorage.getItem('hospitalStatsV2');
     if (savedStats) {
       setStats(JSON.parse(savedStats));
     } else {
-      localStorage.setItem('hospitalStats', JSON.stringify({ patients: 1248, appointments: 42, doctors: 18 }));
+      localStorage.setItem('hospitalStatsV2', JSON.stringify({ patients: 5, appointments: 6, doctors: 6 }));
     }
   }, []);
 
