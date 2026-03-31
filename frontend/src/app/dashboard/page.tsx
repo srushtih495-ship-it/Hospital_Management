@@ -142,33 +142,39 @@ export default function Dashboard() {
         </header>
         
         {/* KPI Widgets */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', width: '100%' }}>
-          <div style={{ background: 'var(--glass-bg)', padding: '2rem', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: 'var(--shadow)', transition: 'transform 0.2s', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
-              <h3 style={{ color: 'var(--text-muted)', fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 700 }}>Total Patients</h3>
-              <span style={{ fontSize: '1.5rem' }}>👥</span>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', width: '100%', marginBottom: '4rem' }}>
+          <Link href="/dashboard/patients" style={{ textDecoration: 'none', display: 'block' }}>
+            <div style={{ background: 'var(--glass-bg)', padding: '2rem', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: 'var(--shadow)', transition: 'transform 0.2s', cursor: 'pointer', height: '100%' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
+                <h3 style={{ color: 'var(--text-muted)', fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 700 }}>Total Patients</h3>
+                <span style={{ fontSize: '1.5rem' }}>👥</span>
+              </div>
+              <p style={{ fontSize: '3.5rem', fontWeight: 800, color: 'var(--text-main)', margin: '0' }}>{stats.patients.toLocaleString()}</p>
+              <p style={{ color: 'var(--primary)', fontWeight: 600, marginTop: '0.5rem', fontSize: '0.9rem' }}>+12% this week</p>
             </div>
-            <p style={{ fontSize: '3.5rem', fontWeight: 800, color: 'var(--text-main)' }}>{stats.patients.toLocaleString()}</p>
-            <p style={{ color: 'var(--primary)', fontWeight: 600, marginTop: '0.5rem', fontSize: '0.9rem' }}>+12% this week</p>
-          </div>
+          </Link>
           
-          <div style={{ background: 'var(--glass-bg)', padding: '2rem', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: 'var(--shadow)', transition: 'transform 0.2s', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
-              <h3 style={{ color: 'var(--text-muted)', fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 700 }}>Appointments Today</h3>
-              <span style={{ fontSize: '1.5rem' }}>📅</span>
+          <Link href="/dashboard/appointments" style={{ textDecoration: 'none', display: 'block' }}>
+            <div style={{ background: 'var(--glass-bg)', padding: '2rem', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: 'var(--shadow)', transition: 'transform 0.2s', cursor: 'pointer', height: '100%' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
+                <h3 style={{ color: 'var(--text-muted)', fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 700 }}>Appointments Today</h3>
+                <span style={{ fontSize: '1.5rem' }}>📅</span>
+              </div>
+              <p style={{ fontSize: '3.5rem', fontWeight: 800, color: 'var(--text-main)', margin: '0' }}>{stats.appointments}</p>
+              <p style={{ color: '#3498db', fontWeight: 600, marginTop: '0.5rem', fontSize: '0.9rem' }}>8 pending confirmation</p>
             </div>
-            <p style={{ fontSize: '3.5rem', fontWeight: 800, color: 'var(--text-main)' }}>{stats.appointments}</p>
-            <p style={{ color: '#3498db', fontWeight: 600, marginTop: '0.5rem', fontSize: '0.9rem' }}>8 pending confirmation</p>
-          </div>
+          </Link>
           
-          <div style={{ background: 'var(--glass-bg)', padding: '2rem', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: 'var(--shadow)', transition: 'transform 0.2s', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
-              <h3 style={{ color: 'var(--text-muted)', fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 700 }}>Active Doctors</h3>
-              <span style={{ fontSize: '1.5rem' }}>🩺</span>
+          <Link href="/dashboard/doctors" style={{ textDecoration: 'none', display: 'block' }}>
+            <div style={{ background: 'var(--glass-bg)', padding: '2rem', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: 'var(--shadow)', transition: 'transform 0.2s', cursor: 'pointer', height: '100%' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
+                <h3 style={{ color: 'var(--text-muted)', fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 700 }}>Active Doctors</h3>
+                <span style={{ fontSize: '1.5rem' }}>🩺</span>
+              </div>
+              <p style={{ fontSize: '3.5rem', fontWeight: 800, color: 'var(--text-main)', margin: '0' }}>{stats.doctors}</p>
+              <p style={{ color: '#9b59b6', fontWeight: 600, marginTop: '0.5rem', fontSize: '0.9rem' }}>2 on leave today</p>
             </div>
-            <p style={{ fontSize: '3.5rem', fontWeight: 800, color: 'var(--text-main)' }}>{stats.doctors}</p>
-            <p style={{ color: '#9b59b6', fontWeight: 600, marginTop: '0.5rem', fontSize: '0.9rem' }}>2 on leave today</p>
-          </div>
+          </Link>
         </div>
 
         {/* Quick Actions */}
