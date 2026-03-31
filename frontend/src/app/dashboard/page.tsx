@@ -171,9 +171,11 @@ export default function Dashboard() {
                 <span>➕</span> Add New Patient
               </div>
             </Link>
-            <button className="btn btn-secondary" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', padding: '0.8rem 1.5rem', fontSize: '1rem', background: 'var(--glass-bg)', borderRadius: '12px' }}>
-              <span>📅</span> Schedule Appointment
-            </button>
+            <Link href="/dashboard/schedule" style={{ textDecoration: 'none' }}>
+              <div className="btn btn-secondary" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', padding: '0.8rem 1.5rem', fontSize: '1rem', background: 'var(--glass-bg)', borderRadius: '12px' }}>
+                <span>📅</span> Schedule Appointment
+              </div>
+            </Link>
             <button className="btn btn-secondary" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', padding: '0.8rem 1.5rem', fontSize: '1rem', background: 'var(--glass-bg)', borderRadius: '12px' }}>
               <span>📝</span> Create Prescription
             </button>
