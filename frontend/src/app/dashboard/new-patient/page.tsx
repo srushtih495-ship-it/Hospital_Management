@@ -22,6 +22,14 @@ export default function NewPatient() {
     // Simulate API call to save patient
     await new Promise(resolve => setTimeout(resolve, 1500));
     
+    // Update live dashboard stats
+    const savedStats = localStorage.getItem('hospitalStats');
+    if (savedStats) {
+      const statsObj = JSON.parse(savedStats);
+      statsObj.patients += 1;
+      localStorage.setItem('hospitalStats', JSON.stringify(statsObj));
+    }
+    
     setSuccess('Patient registered successfully!');
     setLoading(false);
 

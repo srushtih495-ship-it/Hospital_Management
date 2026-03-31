@@ -7,6 +7,7 @@ export default function Dashboard() {
   const [theme, setTheme] = useState('system');
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [userEmail, setUserEmail] = useState('admin@hospital.com');
+  const [stats, setStats] = useState({ patients: 1248, appointments: 42, doctors: 18 });
 
   useEffect(() => {
     // On load, check if there is a saved theme
@@ -20,6 +21,14 @@ export default function Dashboard() {
     const savedEmail = localStorage.getItem('userEmail');
     if (savedEmail) {
       setUserEmail(savedEmail);
+    }
+
+    // Load dynamic persistent stats 
+    const savedStats = localStorage.getItem('hospitalStats');
+    if (savedStats) {
+      setStats(JSON.parse(savedStats));
+    } else {
+      localStorage.setItem('hospitalStats', JSON.stringify({ patients: 1248, appointments: 42, doctors: 18 }));
     }
   }, []);
 
@@ -139,7 +148,7 @@ export default function Dashboard() {
               <h3 style={{ color: 'var(--text-muted)', fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 700 }}>Total Patients</h3>
               <span style={{ fontSize: '1.5rem' }}>👥</span>
             </div>
-            <p style={{ fontSize: '3.5rem', fontWeight: 800, color: 'var(--text-main)' }}>1,248</p>
+            <p style={{ fontSize: '3.5rem', fontWeight: 800, color: 'var(--text-main)' }}>{stats.patients.toLocaleString()}</p>
             <p style={{ color: 'var(--primary)', fontWeight: 600, marginTop: '0.5rem', fontSize: '0.9rem' }}>+12% this week</p>
           </div>
           
@@ -148,7 +157,7 @@ export default function Dashboard() {
               <h3 style={{ color: 'var(--text-muted)', fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 700 }}>Appointments Today</h3>
               <span style={{ fontSize: '1.5rem' }}>📅</span>
             </div>
-            <p style={{ fontSize: '3.5rem', fontWeight: 800, color: 'var(--text-main)' }}>42</p>
+            <p style={{ fontSize: '3.5rem', fontWeight: 800, color: 'var(--text-main)' }}>{stats.appointments}</p>
             <p style={{ color: '#3498db', fontWeight: 600, marginTop: '0.5rem', fontSize: '0.9rem' }}>8 pending confirmation</p>
           </div>
           
@@ -157,7 +166,7 @@ export default function Dashboard() {
               <h3 style={{ color: 'var(--text-muted)', fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 700 }}>Active Doctors</h3>
               <span style={{ fontSize: '1.5rem' }}>🩺</span>
             </div>
-            <p style={{ fontSize: '3.5rem', fontWeight: 800, color: 'var(--text-main)' }}>18</p>
+            <p style={{ fontSize: '3.5rem', fontWeight: 800, color: 'var(--text-main)' }}>{stats.doctors}</p>
             <p style={{ color: '#9b59b6', fontWeight: 600, marginTop: '0.5rem', fontSize: '0.9rem' }}>2 on leave today</p>
           </div>
         </div>

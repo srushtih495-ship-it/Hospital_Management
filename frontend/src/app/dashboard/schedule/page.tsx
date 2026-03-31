@@ -22,6 +22,14 @@ export default function ScheduleAppointment() {
     // Simulate API call to schedule appointment
     await new Promise(resolve => setTimeout(resolve, 1500));
     
+    // Update live dashboard stats
+    const savedStats = localStorage.getItem('hospitalStats');
+    if (savedStats) {
+      const statsObj = JSON.parse(savedStats);
+      statsObj.appointments += 1;
+      localStorage.setItem('hospitalStats', JSON.stringify(statsObj));
+    }
+    
     setSuccess('Appointment perfectly scheduled!');
     setLoading(false);
 
