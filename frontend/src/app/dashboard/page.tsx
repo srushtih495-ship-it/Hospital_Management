@@ -173,6 +173,46 @@ export default function Dashboard() {
             </button>
           </div>
         </div>
+
+        {/* Recent Appointments */}
+        <div style={{ width: '100%', marginTop: '4rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--text-main)', letterSpacing: '-0.5px' }}>Recent Appointments</h2>
+            <button className="btn btn-secondary" style={{ padding: '0.5rem 1rem', fontSize: '0.9rem', borderRadius: '8px' }}>View All</button>
+          </div>
+          <div style={{ background: 'var(--glass-bg)', borderRadius: '16px', border: '1px solid var(--glass-border)', boxShadow: 'var(--shadow)', overflow: 'hidden' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+              <thead style={{ background: 'rgba(0, 0, 0, 0.05)', borderBottom: '1px solid var(--glass-border)' }}>
+                <tr>
+                  <th style={{ padding: '1rem', color: 'var(--text-muted)' }}>Patient Name</th>
+                  <th style={{ padding: '1rem', color: 'var(--text-muted)' }}>Doctor</th>
+                  <th style={{ padding: '1rem', color: 'var(--text-muted)' }}>Date & Time</th>
+                  <th style={{ padding: '1rem', color: 'var(--text-muted)' }}>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style={{ borderBottom: '1px solid var(--glass-border)' }}>
+                  <td style={{ padding: '1rem', color: 'var(--text-main)', fontWeight: 600 }}>Sarah Jenkins</td>
+                  <td style={{ padding: '1rem', color: 'var(--text-main)' }}>Dr. Smith (Cardiology)</td>
+                  <td style={{ padding: '1rem', color: 'var(--text-main)' }}>Oct 24, 09:00 AM</td>
+                  <td style={{ padding: '1rem' }}><span style={{ background: 'rgba(46, 204, 113, 0.2)', color: '#27ae60', padding: '0.4rem 0.8rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 700 }}>Confirmed</span></td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid var(--glass-border)' }}>
+                  <td style={{ padding: '1rem', color: 'var(--text-main)', fontWeight: 600 }}>Michael Chang</td>
+                  <td style={{ padding: '1rem', color: 'var(--text-main)' }}>Dr. Doe (Neurology)</td>
+                  <td style={{ padding: '1rem', color: 'var(--text-main)' }}>Oct 24, 11:30 AM</td>
+                  <td style={{ padding: '1rem' }}><span style={{ background: 'rgba(52, 152, 219, 0.2)', color: '#2980b9', padding: '0.4rem 0.8rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 700 }}>In Progress</span></td>
+                </tr>
+                <tr>
+                  <td style={{ padding: '1rem', color: 'var(--text-main)', fontWeight: 600 }}>Emma Wilson</td>
+                  <td style={{ padding: '1rem', color: 'var(--text-main)' }}>Dr. Adams (Pediatrics)</td>
+                  <td style={{ padding: '1rem', color: 'var(--text-main)' }}>Oct 24, 02:15 PM</td>
+                  <td style={{ padding: '1rem' }}><span style={{ background: 'rgba(241, 196, 15, 0.2)', color: '#f39c12', padding: '0.4rem 0.8rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 700 }}>Pending</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </main>
     </div>
   );
