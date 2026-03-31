@@ -58,11 +58,11 @@ function LoginContent() {
       <form className="auth-form" onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="email">Email Address</label>
-          <input type="email" id="email" required placeholder="admin@hospital.com" value={formData.email} onChange={handleChange} disabled={loading} />
+          <input type="email" id="email" name="email" required placeholder="admin@hospital.com" value={formData.email} onChange={handleChange} disabled={loading} />
         </div>
         <div className="form-group">
           <label htmlFor="password">Password</label>
-          <input type="password" id="password" required placeholder="••••••••" value={formData.password} onChange={handleChange} disabled={loading} />
+          <input type="password" id="password" name="password" required placeholder="••••••••" value={formData.password} onChange={handleChange} disabled={loading} />
         </div>
         <button type="submit" className="btn btn-primary w-full" disabled={loading}>
           {loading ? 'Logging In...' : 'Log In'}

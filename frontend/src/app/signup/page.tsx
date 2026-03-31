@@ -52,15 +52,15 @@ export default function SignUp() {
         <form className="auth-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Full Name</label>
-            <input type="text" id="name" required placeholder="Dr. John Doe" value={formData.name} onChange={handleChange} disabled={loading || success} />
+            <input type="text" id="name" name="name" required placeholder="Dr. John Doe" value={formData.name} onChange={handleChange} disabled={loading || success} />
           </div>
           <div className="form-group">
             <label htmlFor="email">Email Address</label>
-            <input type="email" id="email" required placeholder="john@hospital.com" value={formData.email} onChange={handleChange} disabled={loading || success} />
+            <input type="email" id="email" name="email" required placeholder="john@hospital.com" value={formData.email} onChange={handleChange} disabled={loading || success} />
           </div>
           <div className="form-group">
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" required placeholder="••••••••" value={formData.password} onChange={handleChange} disabled={loading || success} />
+            <input type="password" id="password" name="password" required placeholder="••••••••" value={formData.password} onChange={handleChange} disabled={loading || success} />
           </div>
           <button type="submit" className="btn btn-primary w-full" disabled={loading || success}>
             {loading ? 'Creating Account...' : 'Sign Up'}

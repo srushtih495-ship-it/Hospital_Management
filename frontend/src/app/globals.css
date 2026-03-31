@@ -182,7 +182,7 @@ button, .btn {
   background: rgba(255, 255, 255, 0.5);
   font-family: inherit;
   font-size: 1rem;
-  color: #1e293b; /* Always dark text because the background is white-ish */
+  color: #1e293b;
   transition: all 0.3s ease;
 }
 
