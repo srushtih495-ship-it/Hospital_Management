@@ -181,9 +181,11 @@ export default function Dashboard() {
                 <span>📝</span> Create Prescription
               </div>
             </Link>
-            <button className="btn btn-secondary" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', padding: '0.8rem 1.5rem', fontSize: '1rem', background: 'var(--glass-bg)', borderRadius: '12px' }}>
-              <span>📊</span> Generate Report
-            </button>
+            <Link href="/dashboard/reports" style={{ textDecoration: 'none' }}>
+              <div className="btn btn-secondary" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', padding: '0.8rem 1.5rem', fontSize: '1rem', background: 'var(--glass-bg)', borderRadius: '12px' }}>
+                <span>📊</span> Generate Report
+              </div>
+            </Link>
           </div>
         </div>
 
