@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
-:root {
+:root, [data-theme="light"] {
   --primary: #2ECC71;
   --primary-hover: #27AE60;
   --secondary: #50E3C2;
@@ -12,8 +12,17 @@
   --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
 }
 
+[data-theme="dark"] {
+  --bg-color: #0f172a;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --glass-bg: rgba(15, 23, 42, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg-color: #0f172a;
     --text-main: #f8fafc;
     --text-muted: #94a3b8;
