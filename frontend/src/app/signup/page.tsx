@@ -9,6 +9,7 @@ export default function SignUp() {
   const [formData, setFormData] = useState({ name: '', email: '', password: '' });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -16,25 +17,17 @@ export default function SignUp() {
     setError('');
 
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
-      const res = await fetch(`${apiUrl}/api/v1/auth/signup`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          full_name: formData.name,
-          email: formData.email,
-          password: formData.password
-        }),
-      });
+      // MOCK BACKEND FOR VERCEL PREVIEW
+      await new Promise(resolve => setTimeout(resolve, 1500)); // 1.5s delay to mock API check
+      
+      // Assume success and show message
+      setSuccess(true);
+      
+      // Redirect to login after a brief moment
+      setTimeout(() => {
+        router.push('/login?registered=true');
+      }, 1500);
 
-      if (!res.ok) {
-        const errorData = await res.json();
-        throw new Error(errorData.detail || 'Failed to sign up');
-      }
-
-      router.push('/login?registered=true');
     } catch (err: any) {
       setError(err.message);
     } finally {
@@ -54,21 +47,22 @@ export default function SignUp() {
         <p className="subtitle">Join the CareSync Platform</p>
         
         {error && <div style={{ color: '#e74c3c', backgroundColor: 'rgba(231, 76, 60, 0.1)', padding: '0.8rem', borderRadius: '8px', marginBottom: '1rem', fontSize: '0.9rem' }}>{error}</div>}
+        {success && <div style={{ color: '#2ecc71', backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '0.8rem', borderRadius: '8px', marginBottom: '1rem', fontSize: '0.9rem', fontWeight: 600 }}>Successfully signed up! Redirecting to login...</div>}
 
         <form className="auth-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Full Name</label>
-            <input type="text" id="name" required placeholder="Dr. John Doe" value={formData.name} onChange={handleChange} disabled={loading} />
+            <input type="text" id="name" required placeholder="Dr. John Doe" value={formData.name} onChange={handleChange} disabled={loading || success} />
           </div>
           <div className="form-group">
             <label htmlFor="email">Email Address</label>
-            <input type="email" id="email" required placeholder="john@hospital.com" value={formData.email} onChange={handleChange} disabled={loading} />
+            <input type="email" id="email" required placeholder="john@hospital.com" value={formData.email} onChange={handleChange} disabled={loading || success} />
           </div>
           <div className="form-group">
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" required placeholder="••••••••" value={formData.password} onChange={handleChange} disabled={loading} />
+            <input type="password" id="password" required placeholder="••••••••" value={formData.password} onChange={handleChange} disabled={loading || success} />
           </div>
-          <button type="submit" className="btn btn-primary w-full" disabled={loading}>
+          <button type="submit" className="btn btn-primary w-full" disabled={loading || success}>
             {loading ? 'Creating Account...' : 'Sign Up'}
           </button>
         </form>
