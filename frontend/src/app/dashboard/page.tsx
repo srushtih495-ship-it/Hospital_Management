@@ -6,6 +6,7 @@ import Link from 'next/link';
 export default function Dashboard() {
   const [theme, setTheme] = useState('system');
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [userEmail, setUserEmail] = useState('admin@hospital.com');
 
   useEffect(() => {
     // On load, check if there is a saved theme
@@ -13,6 +14,12 @@ export default function Dashboard() {
     if (savedTheme) {
       setTheme(savedTheme);
       document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+    
+    // Read saved user email from mock login flow
+    const savedEmail = localStorage.getItem('userEmail');
+    if (savedEmail) {
+      setUserEmail(savedEmail);
     }
   }, []);
 
@@ -118,9 +125,9 @@ export default function Dashboard() {
             <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem' }}>Welcome back, Admin. Here is your hospital summary.</p>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: 'var(--glass-bg)', padding: '0.6rem 1.2rem', borderRadius: '50px', border: '1px solid var(--glass-border)', boxShadow: 'var(--shadow)' }}>
-            <span style={{ color: 'var(--text-main)', fontWeight: 600 }}>Admin User</span>
+            <span style={{ color: 'var(--text-main)', fontWeight: 600 }}>{userEmail}</span>
             <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'linear-gradient(135deg, var(--primary), var(--secondary))', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }}>
-              A
+              {userEmail.charAt(0).toUpperCase()}
             </div>
           </div>
         </header>

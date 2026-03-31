@@ -30,6 +30,9 @@ function LoginContent() {
       
       setSuccess('Successfully signed in! Redirecting to dashboard...');
       
+      // Save email for dashboard display
+      localStorage.setItem('userEmail', formData.email);
+      
       // Mock navigation to dashboard
       setTimeout(() => {
          router.push('/dashboard');
