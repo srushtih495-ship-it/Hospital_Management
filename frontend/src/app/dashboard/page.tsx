@@ -154,6 +154,25 @@ export default function Dashboard() {
             <p style={{ color: '#9b59b6', fontWeight: 600, marginTop: '0.5rem', fontSize: '0.9rem' }}>2 on leave today</p>
           </div>
         </div>
+
+        {/* Quick Actions */}
+        <div style={{ width: '100%', marginTop: '4rem' }}>
+          <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '1.5rem', letterSpacing: '-0.5px' }}>Quick Actions</h2>
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+            <button className="btn btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', padding: '0.8rem 1.5rem', fontSize: '1rem', borderRadius: '12px' }}>
+              <span>➕</span> Add New Patient
+            </button>
+            <button className="btn btn-secondary" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', padding: '0.8rem 1.5rem', fontSize: '1rem', background: 'var(--glass-bg)', borderRadius: '12px' }}>
+              <span>📅</span> Schedule Appointment
+            </button>
+            <button className="btn btn-secondary" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', padding: '0.8rem 1.5rem', fontSize: '1rem', background: 'var(--glass-bg)', borderRadius: '12px' }}>
+              <span>📝</span> Create Prescription
+            </button>
+            <button className="btn btn-secondary" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', padding: '0.8rem 1.5rem', fontSize: '1rem', background: 'var(--glass-bg)', borderRadius: '12px' }}>
+              <span>📊</span> Generate Report
+            </button>
+          </div>
+        </div>
       </main>
     </div>
   );
