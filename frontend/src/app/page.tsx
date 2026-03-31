@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Hospital Management System',
@@ -15,8 +16,8 @@ export default function Home() {
           doctor schedules, and billing all in one unified, secure platform.
         </p>
         <div className="action-buttons">
-          <button className="btn-primary" id="btn-signup">Sign Up</button>
-          <button className="btn-secondary" id="btn-signin">Sign In</button>
+          <Link href="/signup" className="btn btn-primary" id="btn-signup">Sign Up</Link>
+          <Link href="/login" className="btn btn-secondary" id="btn-login">Log In</Link>
         </div>
       </div>
     </main>
