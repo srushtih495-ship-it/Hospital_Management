@@ -197,7 +197,10 @@ export default function AppointmentsDirectory() {
                     </span>
                   </td>
                   <td style={{ padding: '1.2rem 1.5rem' }}>
-                    <button style={{ background: 'transparent', border: 'none', color: 'var(--primary)', cursor: 'pointer', fontSize: '1.2rem' }}>⋮</button>
+                    <div style={{ display: 'flex', gap: '1rem' }}>
+                      <a href="#" style={{ color: 'var(--primary)', fontWeight: 600, textDecoration: 'none', fontSize: '0.9rem' }}>View</a>
+                      <a href="#" style={{ color: 'var(--text-muted)', fontWeight: 600, textDecoration: 'none', fontSize: '0.9rem' }}>Edit</a>
+                    </div>
                   </td>
                 </tr>
               ))}
