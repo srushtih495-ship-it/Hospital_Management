@@ -166,9 +166,11 @@ export default function Dashboard() {
         <div style={{ width: '100%', marginTop: '4rem' }}>
           <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '1.5rem', letterSpacing: '-0.5px' }}>Quick Actions</h2>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <button className="btn btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', padding: '0.8rem 1.5rem', fontSize: '1rem', borderRadius: '12px' }}>
-              <span>➕</span> Add New Patient
-            </button>
+            <Link href="/dashboard/new-patient" style={{ textDecoration: 'none' }}>
+              <div className="btn btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', padding: '0.8rem 1.5rem', fontSize: '1rem', borderRadius: '12px' }}>
+                <span>➕</span> Add New Patient
+              </div>
+            </Link>
             <button className="btn btn-secondary" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', padding: '0.8rem 1.5rem', fontSize: '1rem', background: 'var(--glass-bg)', borderRadius: '12px' }}>
               <span>📅</span> Schedule Appointment
             </button>
