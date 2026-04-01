@@ -29,11 +29,11 @@ export default function BillingDirectory() {
   };
 
   const invoices = [
-    { id: 'INV-2041', patient: 'Michael Chang', date: 'Oct 24, 2026', amount: '$450.00', status: 'Paid' },
-    { id: 'INV-2042', patient: 'Sarah Jenkins', date: 'Oct 24, 2026', amount: '$1,200.00', status: 'Pending' },
-    { id: 'INV-2043', patient: 'Emma Wilson', date: 'Oct 23, 2026', amount: '$150.00', status: 'Paid' },
-    { id: 'INV-2044', patient: 'James Robert', date: 'Oct 21, 2026', amount: '$3,400.00', status: 'Overdue' },
-    { id: 'INV-2045', patient: 'Olivia Davis', date: 'Oct 20, 2026', amount: '$85.00', status: 'Paid' },
+    { id: 'INV-2041', patient: 'Michael Chang', date: 'Oct 24, 2026', amount: '₹450.00', status: 'Paid' },
+    { id: 'INV-2042', patient: 'Sarah Jenkins', date: 'Oct 24, 2026', amount: '₹1,200.00', status: 'Pending' },
+    { id: 'INV-2043', patient: 'Emma Wilson', date: 'Oct 23, 2026', amount: '₹150.00', status: 'Paid' },
+    { id: 'INV-2044', patient: 'James Robert', date: 'Oct 21, 2026', amount: '₹3,400.00', status: 'Overdue' },
+    { id: 'INV-2045', patient: 'Olivia Davis', date: 'Oct 20, 2026', amount: '₹85.00', status: 'Paid' },
   ];
 
   const getStatusStyle = (status: string) => {
@@ -145,32 +145,38 @@ export default function BillingDirectory() {
 
         {/* Financial KPIs */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', width: '100%', marginBottom: '4rem' }}>
-          <div style={{ background: 'var(--glass-bg)', padding: '2rem', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: 'var(--shadow)', transition: 'transform 0.2s', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
-              <h3 style={{ color: 'var(--text-muted)', fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 700 }}>Revenue (Oct)</h3>
-              <span style={{ fontSize: '1.5rem' }}>💸</span>
+          <Link href="/dashboard/billing/revenue" style={{ textDecoration: 'none', display: 'block' }}>
+            <div style={{ background: 'var(--glass-bg)', padding: '2rem', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: 'var(--shadow)', transition: 'transform 0.2s', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
+                <h3 style={{ color: 'var(--text-muted)', fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 700 }}>Revenue (Oct)</h3>
+                <span style={{ fontSize: '1.5rem' }}>💸</span>
+              </div>
+              <p style={{ fontSize: '3rem', fontWeight: 800, color: 'var(--text-main)' }}>₹142,500</p>
+              <p style={{ color: 'var(--primary)', fontWeight: 600, marginTop: '0.5rem', fontSize: '0.9rem' }}>+8.4% vs last month</p>
             </div>
-            <p style={{ fontSize: '3rem', fontWeight: 800, color: 'var(--text-main)' }}>$142,500</p>
-            <p style={{ color: 'var(--primary)', fontWeight: 600, marginTop: '0.5rem', fontSize: '0.9rem' }}>+8.4% vs last month</p>
-          </div>
+          </Link>
           
-          <div style={{ background: 'var(--glass-bg)', padding: '2rem', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: 'var(--shadow)', transition: 'transform 0.2s', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
-              <h3 style={{ color: 'var(--text-muted)', fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 700 }}>Pending Payments</h3>
-              <span style={{ fontSize: '1.5rem' }}>⏳</span>
+          <Link href="/dashboard/billing/pending" style={{ textDecoration: 'none', display: 'block' }}>
+            <div style={{ background: 'var(--glass-bg)', padding: '2rem', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: 'var(--shadow)', transition: 'transform 0.2s', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
+                <h3 style={{ color: 'var(--text-muted)', fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 700 }}>Pending Payments</h3>
+                <span style={{ fontSize: '1.5rem' }}>⏳</span>
+              </div>
+              <p style={{ fontSize: '3rem', fontWeight: 800, color: 'var(--text-main)' }}>₹18,400</p>
+              <p style={{ color: '#f39c12', fontWeight: 600, marginTop: '0.5rem', fontSize: '0.9rem' }}>42 invoices await payment</p>
             </div>
-            <p style={{ fontSize: '3rem', fontWeight: 800, color: 'var(--text-main)' }}>$18,400</p>
-            <p style={{ color: '#f39c12', fontWeight: 600, marginTop: '0.5rem', fontSize: '0.9rem' }}>42 invoices await payment</p>
-          </div>
+          </Link>
           
-          <div style={{ background: 'var(--glass-bg)', padding: '2rem', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: 'var(--shadow)', transition: 'transform 0.2s', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
-              <h3 style={{ color: 'var(--text-muted)', fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 700 }}>Overdue Accounts</h3>
-              <span style={{ fontSize: '1.5rem' }}>⚠️</span>
+          <Link href="/dashboard/billing/overdue" style={{ textDecoration: 'none', display: 'block' }}>
+            <div style={{ background: 'var(--glass-bg)', padding: '2rem', borderRadius: '24px', border: '1px solid var(--glass-border)', boxShadow: 'var(--shadow)', transition: 'transform 0.2s', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
+                <h3 style={{ color: 'var(--text-muted)', fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 700 }}>Overdue Accounts</h3>
+                <span style={{ fontSize: '1.5rem' }}>⚠️</span>
+              </div>
+              <p style={{ fontSize: '3rem', fontWeight: 800, color: '#e74c3c' }}>₹5,200</p>
+              <p style={{ color: '#e74c3c', fontWeight: 600, marginTop: '0.5rem', fontSize: '0.9rem' }}>8 accounts require action</p>
             </div>
-            <p style={{ fontSize: '3rem', fontWeight: 800, color: '#e74c3c' }}>$5,200</p>
-            <p style={{ color: '#e74c3c', fontWeight: 600, marginTop: '0.5rem', fontSize: '0.9rem' }}>8 accounts require action</p>
-          </div>
+          </Link>
         </div>
         
         {/* Actions Bar */}
