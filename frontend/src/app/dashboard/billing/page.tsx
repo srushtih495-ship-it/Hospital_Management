@@ -131,9 +131,11 @@ export default function BillingDirectory() {
             <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem' }}>Manage hospital revenue, patient balances, and process payments.</p>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-             <button className="btn btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.6rem 1.2rem', fontSize: '1rem', borderRadius: '50px' }}>
-               <span>➕</span> Create Invoice
-             </button>
+             <Link href="/dashboard/billing/create-invoice" style={{ textDecoration: 'none' }}>
+               <div className="btn btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.6rem 1.2rem', fontSize: '1rem', borderRadius: '50px', cursor: 'pointer' }}>
+                 <span>➕</span> Create Invoice
+               </div>
+             </Link>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', background: 'var(--glass-bg)', padding: '0.4rem 1rem', borderRadius: '50px', border: '1px solid var(--glass-border)' }}>
               <span style={{ color: 'var(--text-main)', fontWeight: 600, fontSize: '0.9rem' }}>{userEmail}</span>
               <div style={{ width: '30px', height: '30px', borderRadius: '50%', background: 'linear-gradient(135deg, var(--primary), var(--secondary))', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }}>
